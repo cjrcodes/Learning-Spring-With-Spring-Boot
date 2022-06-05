@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Guest {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "GUEST_ID")
 	private long guestId;
 
@@ -36,6 +36,21 @@ public class Guest {
 
 	@Column(name = "PHONE_NUMBER")
 	private String phoneNumber;
+	
+	public Guest() {
+		
+	}
+
+	public Guest(String firstName, String lastName, String emailAddress, String address, String country, String state,
+			String phoneNumber) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.emailAddress = emailAddress;
+		this.address = address;
+		this.country = country;
+		this.state = state;
+		this.phoneNumber = phoneNumber;
+	}
 
 	public long getGuestId() {
 		return guestId;

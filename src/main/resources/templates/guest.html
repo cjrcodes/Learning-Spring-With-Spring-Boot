@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Cayfabe Hotel: Room Reservations</title>
+</head>
+<body>
+<h1>Guests Page
+</h1>
+
+<table>
+<tr>
+<td>Guest</td>
+<td>Email</td>
+</tr>
+<tr th:each="guest: ${guests}">
+<td th:text="${guest.lastName}!= null? ${guest.lastName} + ', ' + ${guest.firstName}: 'VACANT'">Guest</td>
+<td th:text="${guest.emailAddress}!= null? ${guest.emailAddress}: 'No Email Found'">Email</td>
+</tr>
+</table>
+</body>
+<body>
+
+</body>
+</html>
